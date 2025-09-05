@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undergoing</title>
+    <!--font awesome cdn link-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <!--custom css file link-->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!--header section starts-->
+    <header class="header">
+        <a href="#" class="logo"><span>U</span>ndergoing</a>
+        <nav class="navbar">
+            <a href="#banner">home</a>
+            <a href="#contact">contact</a>
+            <a href="#blogs">blogs</a>
+        </nav>
+        <div class="icons">
+            <i class="fas fa-bars" id="menu-bars"></i>
+            <i class="fas fa-search" id="search-icon"></i>
+        </div>
+        <form action="" class="search-form">
+            <input type="search" name="" placeholder="What are you looking for?" id="search-box" class="search">
+            <label for="search-box" class="fas fa-search"></label>
+        </form>
+    </header>
+    <!--header section ends-->
+    <!--banner section starts-->
+    <section class="banner" id="banner">
+        <div class="content">
+            <h3>Welcome to Undergoing</h3>
+            <p>What is life without experiences?</p>
+            <a href="https://nushk1e2.wordpress.com/" class="btn">Read More</a>
+        </div>
+    </section>
+    <!--banner section ends-->
+        <!--blogs section starts-->
+    <section class="container" id="blogs">
+        <h1 class="heading">Latest <span>Blogs</span></h1>
+       <div class="posts-container">
+         <div class="post" data-id="1">
+           <img src="/b02f73a5-ab76-45dd-9b67-e0ced41ed061.jpeg" class="image">
+           <div class="date">
+             <i class="far fa-clock"></i>
+             <span>12th Jan 2023</span>
+           </div>
+           <h3 class="title">Cavemen</h3>
+           <p class="text">We are cavemen in concrete jungles. We hunt for survival, we kill animals for food, we use fire to ward off enemies, we protect our families, and we adapt to our surroundings. We don’t care about the world- as for us the world is only our cave. Any other cave is a threat. We will steal from other caves, even from those who don’t have caves. We will not give away our resources unless in return for something equally valuable. We wage wars over nothing- thinking it will bring peace to us. We are territorial over anything and everything. There is no such thing as humanity. There is no such thing as self-control, law, or human rights. Children are birthed and left alone- some die but we don’t care. There are no jobs, education is no longer necessary. In fact, it even makes sense to think someone is taking education away from the masses on purpose. All we care about and fight over is some kind of divine presence or power that lit the fire, no cares about the actual reason behind it. We worship because we fear the wrath of nature.</p>
+           <p class="text">We make up stories to keep the fear prevailing. We might have made a family, but in the end all we care about is our own self. Survival of the fittest; law of nature: will always apply to us no matter how many jungles we uproot. Concept of civic sense is alien to us, and so is empathy. We will kill anyone who is slightly different from us. We don’t know the concept of sharing, if I found something it will forever be mine alone- if you want it so desperately, pay me a hefty sum. Artisans are of no use, make me a wheel and maybe I’ll pay you something. Yet we will decorate our caves with art, which will in the future remain as the only proof that we ever existed. We don’t have the critical thinking abilities to distinguish between edible and poisonous, so we consume both- often identifying one as the other. We’ve grown so used to the poison that we no longer remember if it’s supposed to harm us. We have built up our immunity; or should I say- ignorance?</p>
+           <div class="links">
+             <a href="#" class="user">
+                <i class="far fa-user"></i>
+                <span>Anushka</span>
+             </a>
+            </div>
+            <div class="tags">
+                <span class="tag">undergoing</span>
+                <span class="tag">life</span>
+                <span class="tag">society</span>
+            <!-- Toggle button (only visible on mobile) -->
+               <button class="toggle-comments" onclick="toggleComments(1)">Show Comments</button>
+                <!-- Comment Section -->
+                 <div class="comment-section" id="comments-section-1">
+                     <textarea class="comment-box" id="comment-input-1" placeholder="Write a comment..."></textarea>
+                     <button class="comment-btn" onclick="addComment(1)">Post Comment</button>
+                     <div class="comments-list" id="comments-1"></div>
+                    </div>
+                    <!-- Voting Section -->
+                     <div class="vote-section">
+                        <button class="vote-btn" onclick="vote(1, 'up')">👍</button>
+                        <span id="votes-1" class="vote-count">0</span>
+                        <button class="vote-btn" onclick="vote(1, 'down')">👎</button>
+                    </div>
+                    <!-- Sharing Section -->
+                     <div class="share-section">
+                        <a href="#" class="share-btn whatsapp" onclick="shareSocial(1, 'whatsapp')">WhatsApp</a>
+                        <a href="#" class="share-btn twitter" onclick="shareSocial(1, 'twitter')">Twitter</a>
+                        <a href="#" class="share-btn facebook" onclick="shareSocial(1, 'facebook')">Facebook</a>
+                        <a href="#" class="share-btn linkedin" onclick="shareSocial(1, 'linkedin')">LinkedIn</a>
+                        <a href="#" class="share-btn email" onclick="shareSocial(1, 'email')">Email</a>
+                    </div>
+        </div>
+        <div class="post" data-id="2">
+           <img src="/30008af6-333d-4d03-843f-6906eaf5b62e.jpeg" class="image">
+           <div class="date">
+            <i class="far fa-clock"></i>
+            <span>15th Feb 2023</span>
+           </div>
+           <h3 class="title">Happy Independence Day</h3>
+           <p class="text">We celebrate this day in honour of all the freedom fighters that helped free our India from the British government. The treatment they gave us Indians was not even fathomable. They exploited us economically, drained our whole country’s wealth, their harsh economic policies and taxes led to widespread poverty, and we will always remember the Jallianwala Bagh massacre. You couldn’t speak out against the government- they could do whatever they want. Yet many spoke out, got jailed and even killed; all for their beautiful country. Our country adopted representative parliamentary form of democracy as it suited us citizens- ones who fought for their rights and did protests over anything and everything. Democracy is the whole spirit of India; the largest democracy in the world. 
+           It has been 79 years since then- India has moved forward and developed. It is the fourth largest economy; and the most populous country in the world. We have a lot more freedom now, so no more freedom fighters. We have no fighters at all. No one cares anymore. Maybe it’s just our generation that has become desensitized to everything- everything but street dogs.
+           Supreme Court has recently passed a verdict ordering all stray dogs to be taken away and sealed inside pounds with horrible conditions as one of them led to the death of a young child; just one. This has enraged almost every person of our generation in this country- including me, of course. People are spamming stories, signing petitions- I’ve signed multiple petitions myself! The response we are getting against this horrible verdict is awesome! 
+           </p>
+           <p class="text">Remember Nirbhaya? There were protests for that too- yet it took so much time to order a death sentence for the perpetrators and even among that, one is probably roaming free right about now. Remember RG Kar Hospital? How many of you spammed stories and signed petitions for that? Are you aware of the fact that no one cares anymore? The government has successfully distracted us yet again. Instead of protesting against the government for not hanging the perpetrators of that case a year ago- all we care about is dogs. It is not wrong- it is biased. You care only about things that directly affect you. Dogs don’t deserve to be treated like wild animals- who does deserve that? Us, humans do. Humans who do not care for the girl that was raped in that bus- to the point her intestines were outside her body. Humans who do not care for the young doctor whose pelvis bone was cracked open from sheer force; whose legs were bent more than 45 degrees apart- blood seeping through. Humans who do not care for the people dying in Gaza, from bombs yes but mainly from starvation. I see each and every one of you- who did nothing for their country but is trying to do everything for street dogs. You know who else is treated like a street dog in this country? You. All of us. Maybe we are even worser than them- we caused the death of not one but many humans and even dogs, yet we didn’t care enough to even sign a petition for that. 
+           We know what our government is doing to us, do we care? No, do we even acknowledge that? To us, politicians are gods and whatever they do is right. Being a politician must be fun in our country- you have got ‘bhakts’ behind you to clean up your mess through gaslighting. No one is going to fight, no one is going to protest. The ones that do- are silenced by the bhakts or by the government itself. We must be like toddlers to them- if we start making a crying face, they will put on Cocomelon for us and we’d be happy again. If we fall on the floor, they will blame the floor to hide their crime. Have you ever stood in front of an election campaign and even thought- ‘What good have you really done for this country?’ Have you asked yourself that? When we talk about India- do not imagine a political map- imagine its people- each with their diversity intact- with Hindus, with Muslims, with Christians, with Sikhs- with men and women in harmony, both capable of working in the fields and in the kitchen, with intellect; not biasedness. That is what India is- its true spirit. 
+           But reality is- women are not free, children are not free, men are not free, animals are not free, even thoughts are not free, election fraud is real but no one cares. Where are our freedom fighters? Does anyone realise that this whole street dog thing could be yet another distraction from the real problem? When was the last time we were a threat to the government? When was the last time our government worked for us? What is the difference between the British government and the government we elected for our own selves? One opened the railways, the ships, the post offices. And the other can’t even hold a press conference.
+           But yes, to the ones that stayed here either in fury, ignorance, or enlightenment-
+           A very Happy Independence Day to you!
+           </p>
+           <div class="links">
+            <a href="#" class="user">
+                <i class="far fa-user"></i>
+                <span>Anushka</span>
+            </a>
+            </div>
+            <div class="tags">
+                <span class="tag">society</span>
+                <span class="tag">undergoing</span>
+           <!-- Toggle button (only visible on mobile) -->
+               <button class="toggle-comments" onclick="toggleComments(2)">Show Comments</button>
+                <!-- Comment Section -->
+                 <div class="comment-section" id="comments-section-2">
+                     <textarea class="comment-box" id="comment-input-2" placeholder="Write a comment..."></textarea>
+                     <button class="comment-btn" onclick="addComment(2)">Post Comment</button>
+                     <div class="comments-list" id="comments-2"></div>
+                    </div>
+                    <!-- Voting Section -->
+                     <div class="vote-section">
+                        <button class="vote-btn" onclick="vote(2, 'up')">👍</button>
+                        <span id="votes-2" class="vote-count">0</span>
+                        <button class="vote-btn" onclick="vote(2, 'down')">👎</button>
+                    </div>
+                    <!-- Sharing Section -->
+                     <div class="share-section">
+                        <a href="#" class="share-btn whatsapp" onclick="shareSocial(2, 'whatsapp')">WhatsApp</a>
+                        <a href="#" class="share-btn twitter" onclick="shareSocial(2, 'twitter')">Twitter</a>
+                        <a href="#" class="share-btn facebook" onclick="shareSocial(2, 'facebook')">Facebook</a>
+                        <a href="#" class="share-btn linkedin" onclick="shareSocial(2, 'linkedin')">LinkedIn</a>
+                        <a href="#" class="share-btn email" onclick="shareSocial(2, 'email')">Email</a>
+                    </div>
+           <div class="post" data-id="3">
+            <img src="/dixxxxmay no TikTok.jpeg" class="image">
+            <div class="date">
+                <i class="far fa-clock"></i>
+                <span>15th Feb 2023</span>
+           </div>
+           <h3 class="title">The Canon Event</h3>
+           <p class="text">I couldn’t wait to get into college. I wanted individuality, independence, confidence, and that grown up feeling of taking my laptop to school. I didn’t want to wear this crusty uniform anymore; I didn’t want the teacher to scold me for taking two strands of hair out of my ponytail. I wanted to be a fashionista- expressing my personality through even my fingernails. I wanted to put kajal everyday before school. I wanted to study only what I’m best at. I wanted to take the metro and run away from the world I was originally confined to. I wanted the world to see this personality I’ve spent my whole life building. 
+           Then the identity crisis hit me. What personality? The so-called topper who could barely keep up with the competition? Or the multi-tasker who used to take care of all the scrap tasks? The introvert who was famous for sitting at the corner of the class all alone, or the extrovert who kept scheduling club meetings and events? The artist who owned the art room like her own little garden, or the house leader who couldn’t even lead a few juniors? The aesthetic girl or the weird one? The social media director or the English girly? The naïve one or the twisted, two-faced one? The teacher’s favourite, or the one our math teacher hated? The so-called top student in the class, or the dumb student from math? I’m everything and nothing all at once. Smart yet dumb, social yet secluded, fun yet boring, special yet standard, normal yet weird. Thus, I have no personality- everything cancelled out; my huge equation ended up being equal to zero. 
+           </p>
+           <p class="text">I had all the potential to get into a top college. But along with my personality- I lost my motivation too. My family was sure of it; they were so ready to hear the good news. But I wasn’t ready to open my books all over again and go through the whole process of revision and practice for something I had been studying for more than a year now. I forfeited my dreams and ambitions for comfort. I’m not a topper- I am just lucky. And my luck ran out before I could get my college. If you don’t work hard to be in the front of the race from the start- you’re not going to make it. And I didn’t make it- I am not allowed to complain either because what I did was not my best- this college I have is the one I got after putting zero efforts- so in a sense you could say I’m still lucky. I don’t have the right to complain about my college because I didn’t even try to get a better one. 
+           To whom should I show my personality? And which one? Which character do I choose for the next three years? This long, long break between school and college ruins you. It leaks all your potential- especially if you couldn’t get in your dream college. I am no longer excited for college; send me back to school- back where you grew up with the same people, where you wore the same clothes and studied the same things. Back when your only concern was exams and the two strands of hair. Back when your personality was inside you- not outside in your clothes or your college bag. Back when personality wasn’t materialized. Back when you’d walk to school with your friends, back when you looked up to college life. 
+           </p>
+           <div class="links">
+            <a href="#" class="user">
+                <i class="far fa-user"></i>
+                <span>Anushka</span>
+            </a>
+            <div class="tags">
+                <span class="tag">life</span>
+                <span class="tag">undergoing</span>
+                <span class="tag">teenage</span>
+                <span class="tag">experience</span>
+             <!-- Toggle button (only visible on mobile) -->
+               <button class="toggle-comments" onclick="toggleComments(3)">Show Comments</button>
+                <!-- Comment Section -->
+                 <div class="comment-section" id="comments-section-3">
+                     <textarea class="comment-box" id="comment-input-3" placeholder="Write a comment..."></textarea>
+                     <button class="comment-btn" onclick="addComment(3)">Post Comment</button>
+                     <div class="comments-list" id="comments-3"></div>
+                    </div>
+                    <!-- Voting Section -->
+                     <div class="vote-section">
+                        <button class="vote-btn" onclick="vote(3, 'up')">👍</button>
+                        <span id="votes-3" class="vote-count">0</span>
+                        <button class="vote-btn" onclick="vote(3, 'down')">👎</button>
+                    </div>
+                    <!-- Sharing Section -->
+                     <div class="share-section">
+                        <a href="#" class="share-btn whatsapp" onclick="shareSocial(3, 'whatsapp')">WhatsApp</a>
+                        <a href="#" class="share-btn twitter" onclick="shareSocial(3, 'twitter')">Twitter</a>
+                        <a href="#" class="share-btn facebook" onclick="shareSocial(3, 'facebook')">Facebook</a>
+                        <a href="#" class="share-btn linkedin" onclick="shareSocial(3, 'linkedin')">LinkedIn</a>
+                        <a href="#" class="share-btn email" onclick="shareSocial(3, 'email')">Email</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sidebar">
+            <div class="box">
+                <h3 class="title">About Me</h3>
+                <div class="about">
+                    <img src="/WhatsApp Image 2025-08-26 at 18.54.37_62166558.jpg">
+                    <h3>Anushka Srivastava</h3>
+                    <p>Hi! I'm Anushka, a passionate learner and aspiring web developer. I started writing 
+                        blogs to share my thoughts and experiences with the world. Through my writing, I aim to inspire and connect with like-minded individuals. Join me on this journey of exploration and self-expression!
+                    </p>
+                    <div class="follow">
+                        <a href="https://www.instagram.com/nushk1e?igsh=NmhuYmIyMG5sb3Rz" class="fab fa-instagram"></a>
+                        <a href="https://www.linkedin.com/in/anushka-srivastava-123456789/" class="fab fa-linkedin"></a>
+                        <a href="https://github.com/nushk1e" class="fab fa-github"></a>
+                        <a href="https://wordpress.com/view/nushk1e.wordpress.com" class="fab fa-wordpress"></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box">
+                <h3 class="title">Categories</h3>
+                <div class="category">
+                    <a href="#">Society <span>(2)</span></a>
+                    <a href="#">Life <span>(1)</span></a>
+                </div>
+            </div>
+
+            <div class="box">
+                <h3 class="title">Popular Posts</h3>
+                <div class="p-post">
+                    <a href="#post-1">
+                        <h3>01. Cavemen</h3>
+                        <span><i class="far fa-clock">1st May, 2024</i></span>
+                    </a>
+                    <a href="#post-3">
+                        <h3>02. The Canon Event</h3>
+                        <span><i class="far fa-clock">29th May, 2024</i></span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="box">
+                <h3 class="title">Popular Tags</h3>
+                <div class="tags">
+                    <a href="#post-1">undergoing</a>
+                    <a href="#post-3">experience</a>
+                    <a href="#post-3">teenage</a>
+                    <a href="#post-1">life</a>
+                    <a href="#post-2">society</a>
+                </div>
+            </div>
+
+       </div>
+       </section>
+        <!--blogs section ends-->
+    <!--contact section starts-->
+    <section class="contact" id="contact">
+        <form action="">
+            <h3>Contact Me</h3>
+            <div class="inputBox">
+                <input type="text" placeholder="Name" required>
+                <input type="email" placeholder="Email" required>
+            </div>
+            <div class="inputBox">
+                <input type="number" placeholder="Number">
+                <input type="text" placeholder="Subject">
+            </div>
+            <textarea name="" placeholder="Message" rows="10" cols="30"></textarea>
+            <input type="submit" value="Send message" class="btn">
+        </form>
+    </section>
+        <!--contact section ends-->
+        <!--footer section starts-->
+    <section class="footer">
+        <div class="follow">
+            <a href="https://www.instagram.com/nushk1e?igsh=NmhuYmIyMG5sb3Rz" class="fab fa-instagram"></a>
+            <a href="https://www.linkedin.com/in/anushka-srivastava-123456789/" class="fab fa-linkedin"></a>
+            <a href="https://github.com/nushk1e" class="fab fa-github"></a>
+            <a href="https://wordpress.com/view/nushk1e.wordpress.com" class="fab fa-wordpress"></a>
+        </div>
+        <div class="credit">created by <span>Anushka Srivastava</span> | all rights reserved!</div>
+    </section>        
+        <!--footer section ends-->
+
+
+    <!--custom js file link-->
+    <script src="script.js"></script>
+</body>
+</html>

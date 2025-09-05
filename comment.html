@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Comment Section</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+      background-color: #f9f9f9;
+    }
+
+    h2, h3 {
+      color: #333;
+    }
+
+    .comment-box {
+      margin-bottom: 20px;
+    }
+
+    textarea, input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 8px 14px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .delete-btn {
+      background-color: #e74c3c;
+      margin-left: 10px;
+    }
+
+    .delete-btn:hover {
+      background-color: #c0392b;
+    }
+
+    .comment-list {
+      margin-top: 20px;
+    }
+
+    .comment {
+      background-color: #fff;
+      padding: 12px;
+      border-radius: 6px;
+      margin-bottom: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .comment strong {
+      color: #333;
+    }
+
+    .timestamp {
+      font-size: 12px;
+      color: gray;
+      margin-top: 5px;
+    }
+
+    .comment-actions {
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Leave a Comment</h2>
+  <div class="comment-box">
+    <input type="text" id="username" placeholder="Your Name" required>
+    <textarea id="comment" rows="4" placeholder="Write your comment..." required></textarea>
+    <button onclick="addComment()">Post Comment</button>
+  </div>
+
+  <h3>Comments:</h3>
+  <div id="commentList" class="comment-list"></div>
+
+  <script>
+    // Load saved comments from localStorage
+    document.addEventListener("DOMContentLoaded", loadComments);
+
+    function addComment() {
+      const username = document.getElementById("username").value.trim();
+      const commentText = document.getElementById("comment").value.trim();
+
+      if (username === "" || commentText === "") {
+        alert("Please enter your name and comment!");
+        return;
+      }
+
+      const comment = {
+        id: Date.now(), // unique ID for each comment
+        name: username,
+        text: commentText,
+        time: new Date().toLocaleString()
+      };
+
+      // Save to localStorage
+      let comments = JSON.parse(localStorage.getItem("comments")) || [];
+      comments.unshift(comment); // add to top
+      localStorage.setItem("comments", JSON.stringify(comments));
+
+      displayComment(comment, true);
+
+      // Clear inputs
+      document.getElementById("username").value = "";
+      document.getElementById("comment").value = "";
+    }
+
+    function loadComments() {
+      let comments = JSON.parse(localStorage.getItem("comments")) || [];
+      comments.forEach(comment => displayComment(comment, false));
+    }
+
+    function displayComment(comment, prepend) {
+      const commentList = document.getElementById("commentList");
+
+      const commentDiv = document.createElement("div");
+      commentDiv.classList.add("comment");
+      commentDiv.setAttribute("data-id", comment.id);
+
+      commentDiv.innerHTML = `
+        <strong>${comment.name}</strong><br>
+        <span>${comment.text}</span>
+        <div class="timestamp">${comment.time}</div>
+        <div class="comment-actions">
+          <button class="delete-btn" onclick="deleteComment(${comment.id})">Delete</button>
+        </div>
+      `;
+
+      if (prepend) {
+        commentList.prepend(commentDiv);
+      } else {
+        commentList.appendChild(commentDiv);
+      }
+    }
+
+    function deleteComment(id) {
+      // Remove from localStorage
+      let comments = JSON.parse(localStorage.getItem("comments")) || [];
+      comments = comments.filter(comment => comment.id !== id);
+      localStorage.setItem("comments", JSON.stringify(comments));
+
+      // Remove from UI
+      const commentDiv = document.querySelector(`.comment[data-id='${id}']`);
+      if (commentDiv) {
+        commentDiv.remove();
+      }
+    }
+  </script>
+
+</body>
+</html>
