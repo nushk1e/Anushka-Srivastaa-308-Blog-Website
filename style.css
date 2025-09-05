@@ -176,7 +176,7 @@ section{
 }
 .banner{
     min-height: 80vh;
-    background: url(https://github.com/nushk1e/Anushka-Srivastaa-308-Blog-Website/--@𝗉𝖺𝗂𝗇𝗍𝖾𝖽𝖽𝗈𝗏𝖾𝗌.jpeg) no-repeat;
+    background: url(--@𝗉𝖺𝗂𝗇𝗍𝖾𝖽𝖽𝗈𝗏𝖾𝗌.jpeg) no-repeat;
     background-size: cover;
     background-position: center;
     display: grid;
@@ -635,3 +635,4 @@ section{
     }
 
 }
+
