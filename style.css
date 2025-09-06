@@ -570,11 +570,6 @@ section{
      color: #333;
 }
 
-.whatsapp { background: #25D366; }
-.twitter { background: #1DA1F2; }
-.facebook { background: #1877F2; }
-.linkedin { background: #0077B5; }
-.email { background: #555; }
 
 .share-btn:hover {
     opacity: 0.85;
@@ -635,4 +630,5 @@ section{
     }
 
 }
+
 
