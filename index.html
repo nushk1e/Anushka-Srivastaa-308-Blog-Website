@@ -74,6 +74,7 @@
     </div>
 
   <!-- Sharing Section -->
+                <button class="share-btn" onclick="shareBlog(1)">🔗 Share</button>
         </div>
         <div class="post" data-id="2">
            <img src="30008af6-333d-4d03-843f-6906eaf5b62e.jpeg" class="image">
@@ -115,6 +116,7 @@
     </div>
 
   <!-- Sharing Section -->
+                <button class="share-btn" onclick="shareBlog(2)">🔗 Share</button>
            <div class="post" data-id="3">
             <img src="dixxxxmay no TikTok.jpeg" class="image">
             <div class="date">
@@ -152,6 +154,7 @@
     </div>
 
   <!-- Sharing Section -->
+                <button class="share-btn" onclick="shareBlog(3)">🔗 Share</button>
                 </div>
             </div>
         </div>
@@ -312,46 +315,6 @@ document.getElementById("votes-" + postId).innerText = votes[postId];
         }
       }
     }
-// ============================
-// SHARING SYSTEM
-// ============================
-
-function share(platform) {
-    const pageUrl = encodeURIComponent(window.location.href);
-    const pageTitle = encodeURIComponent(document.title);
-
-    let shareUrl = "";
-
-    if (platform === "facebook") {
-        shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`;
-    } else if (platform === "twitter") {
-        shareUrl = `https://twitter.com/intent/tweet?url=${pageUrl}&text=${pageTitle}`;
-    } else if (platform === "linkedin") {
-        shareUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${pageUrl}&title=${pageTitle}`;
-    } else if (platform === "whatsapp") {
-        shareUrl = `https://api.whatsapp.com/send?text=${pageTitle}%20${pageUrl}`;
-    }
-
-    // Open in a new tab
-    if (shareUrl) {
-        window.open(shareUrl, "_blank");
-    }
-}
-
- // --- Comments logic ---
-function addComment(postId) {
-    const input = document.getElementById("comment-input-" + postId);
-    const commentText = input.value.trim();
-    if (commentText === "") return;
-
-    const commentList = document.getElementById("comments-" + postId);
-    const comment = document.createElement("div");
-    comment.className = "comment";
-    comment.textContent = commentText;
-
-    commentList.appendChild(comment);
-    input.value = "";
-    }
 
 // --- Toggle Comments (only on mobile) ---
 function toggleComments(postId) {
@@ -366,34 +329,29 @@ function toggleComments(postId) {
         btn.textContent = "Hide Comments";
       }
     }
+// share function
+ function shareBlog(postId) {
+      const post = document.querySelector(`.blog-post[data-id="${postId}"]`);
+      const title = post.querySelector("h2").innerText;
+      const text = post.querySelector("p").innerText;
+      const url = window.location.href + "#post-" + postId;
 
- // --- Social sharing ---
-function shareSocial(postId, platform) {
-    const post = document.querySelector(`.blog-post[data-id="${postId}"]`);
-    const title = encodeURIComponent(post.querySelector("h2").innerText);
-    const text = encodeURIComponent(post.querySelector("p").innerText);
-    const url = encodeURIComponent(window.location.href + "#post-" + postId);
-
-    let shareUrl = "";
-    switch (platform) {
-                case "whatsapp":
-                    shareUrl = `https://wa.me/?text=${title}%20-%20${url}`;
-                    break;
-                    case "twitter":
-                        shareUrl = `https://twitter.com/intent/tweet?text=${title}&url=${url}`;
-                        break;
-                        case "facebook":
-                            shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
-                            break;
-                            case "linkedin":
-                                shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
-                                break;
-                                case "email":
-                                    shareUrl = `mailto:?subject=${title}&body=${text}%0A${url}`;
-                                    break;
-                                }
-
-window.open(shareUrl, "_blank");
+      if (navigator.share) {
+        // ✅ Web Share API (mobile-friendly)
+        navigator.share({
+          title: title,
+          text: text,
+          url: url,
+        })
+        .then(() => console.log("Blog shared successfully!"))
+        .catch(err => console.log("Share failed:", err));
+      } else {
+        // ❌ Fallback (copy link to clipboard)
+        navigator.clipboard.writeText(url).then(() => {
+          alert("Link copied to clipboard: " + url);
+        });
+      }
+    }
 
 //search function
     function searchPosts() {
@@ -414,6 +372,7 @@ window.open(shareUrl, "_blank");
 </body>
 
 </html>
+
 
 
 
