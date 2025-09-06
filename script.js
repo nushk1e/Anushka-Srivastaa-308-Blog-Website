@@ -91,33 +91,6 @@ function shareBlog(postId) {
         });
     }
 }
-// share function for sns
-function shareSocial(postId, platform) {
-    const post = document.querySelector(`.post[data-id="${postId}"]`);
-    const title = encodeURIComponent(post.querySelector("h3").innerText);
-    const text = encodeURIComponent(post.querySelector("p").innerText);
-    const url = encodeURIComponent(window.location.href + "#post-" + postId);
-}
-let shareUrl = "";
-
-switch (platform) {
-    case "whatsapp":
-        shareUrl = `https://wa.me/?text=${title}%20-%20${url}`;
-        break;
-        case "twitter":
-            shareUrl = `https://twitter.com/intent/tweet?text=${title}&url=${url}`;
-          break;
-        case "facebook":
-          shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
-          break;
-          case "linkedin":
-            shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
-            break;
-            case "email":
-                shareUrl = `mailto:?subject=${title}&body=${text}%0A${url}`;
-                break;
-            }
-
  // --- Comments logic ---
 function addComment(postId) {
     const input = document.getElementById("comment-input-" + postId);
@@ -147,34 +120,6 @@ function toggleComments(postId) {
       }
     }
 
- // --- Social sharing ---
-function shareSocial(postId, platform) {
-    const post = document.querySelector(`.blog-post[data-id="${postId}"]`);
-    const title = encodeURIComponent(post.querySelector("h2").innerText);
-    const text = encodeURIComponent(post.querySelector("p").innerText);
-    const url = encodeURIComponent(window.location.href + "#post-" + postId);
-
-    let shareUrl = "";
-    switch (platform) {
-                case "whatsapp":
-                    shareUrl = `https://wa.me/?text=${title}%20-%20${url}`;
-                    break;
-                    case "twitter":
-                        shareUrl = `https://twitter.com/intent/tweet?text=${title}&url=${url}`;
-                        break;
-                        case "facebook":
-                            shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
-                            break;
-                            case "linkedin":
-                                shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
-                                break;
-                                case "email":
-                                    shareUrl = `mailto:?subject=${title}&body=${text}%0A${url}`;
-                                    break;
-                                }
-
-window.open(shareUrl, "_blank");
-
 //search function
     function searchPosts() {
       const input = document.getElementById("search-box").value.toLowerCase();
@@ -190,4 +135,5 @@ window.open(shareUrl, "_blank");
       });
     }
 }
+
 
