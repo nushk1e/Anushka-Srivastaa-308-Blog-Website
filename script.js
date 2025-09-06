@@ -174,4 +174,19 @@ function shareSocial(postId, platform) {
                                 }
 
 window.open(shareUrl, "_blank");
+
+//search function
+    function searchPosts() {
+      const input = document.getElementById("search-box").value.toLowerCase();
+      const posts = document.querySelectorAll(".post");
+
+      posts.forEach(post => {
+        const text = post.innerText.toLowerCase();
+        if (text.includes(input)) {
+          post.classList.remove("hidden");
+        } else {
+          post.classList.add("hidden");
+        }
+      });
+    }
 }
