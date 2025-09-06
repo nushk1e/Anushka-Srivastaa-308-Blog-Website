@@ -266,6 +266,17 @@ window.onscroll = () => {
     searchForm.classList.remove("active");
 }
 
+        // --- Voting logic ---
+const votes = {};
+
+function vote(postId, type) {
+    if (!votes[postId]) votes[postId] = 0;
+    if (type === "up") votes[postId]++;
+    else if (type === "down") votes[postId]--;
+
+document.getElementById("votes-" + postId).innerText = votes[postId];
+}
+
 
 // Load votes from localStorage
     document.addEventListener("DOMContentLoaded", loadVotes);
@@ -325,17 +336,6 @@ function share(platform) {
     if (shareUrl) {
         window.open(shareUrl, "_blank");
     }
-}
-
-// --- Voting logic ---
-const votes = {};
-
-function vote(postId, type) {
-    if (!votes[postId]) votes[postId] = 0;
-    if (type === "up") votes[postId]++;
-    else if (type === "down") votes[postId]--;
-
-document.getElementById("votes-" + postId).innerText = votes[postId];
 }
 
  // --- Comments logic ---
@@ -414,6 +414,7 @@ window.open(shareUrl, "_blank");
 </body>
 
 </html>
+
 
 
 
