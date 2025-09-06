@@ -23,6 +23,17 @@ window.onscroll = () => {
     searchForm.classList.remove("active");
 }
 
+// --- Voting logic ---
+const votes = {};
+
+function vote(postId, type) {
+    if (!votes[postId]) votes[postId] = 0;
+    if (type === "up") votes[postId]++;
+    else if (type === "down") votes[postId]--;
+
+document.getElementById("votes-" + postId).innerText = votes[postId];
+}
+
 
 // Load votes from localStorage
 document.addEventListener("DOMContentLoaded", loadVotes);
@@ -107,17 +118,6 @@ switch (platform) {
                 break;
             }
 
-// --- Voting logic ---
-const votes = {};
-
-function vote(postId, type) {
-    if (!votes[postId]) votes[postId] = 0;
-    if (type === "up") votes[postId]++;
-    else if (type === "down") votes[postId]--;
-
-document.getElementById("votes-" + postId).innerText = votes[postId];
-}
-
  // --- Comments logic ---
 function addComment(postId) {
     const input = document.getElementById("comment-input-" + postId);
@@ -190,3 +190,4 @@ window.open(shareUrl, "_blank");
       });
     }
 }
+
